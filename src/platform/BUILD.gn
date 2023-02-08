@@ -246,6 +246,12 @@ if (chip_device_platform != "none" && chip_device_platform != "external") {
         "CHIP_DEVICE_LAYER_TARGET=Ameba",
         "CHIP_DEVICE_CONFIG_ENABLE_WIFI=${chip_enable_wifi}",
       ]
+    } else if (chip_device_platform == "atbm") {
+      defines += [
+        "CHIP_DEVICE_LAYER_TARGET_ATBM=1",
+        "CHIP_DEVICE_LAYER_TARGET=Atbm",
+        "CHIP_DEVICE_CONFIG_ENABLE_WIFI=${chip_enable_wifi}",
+      ]
     } else if (chip_device_platform == "cyw30739") {
       defines += [
         "CHIP_DEVICE_LAYER_TARGET_CYW30739=1",
@@ -438,6 +444,8 @@ if (chip_device_platform != "none") {
       _platform_target = "Infineon/PSOC6"
     } else if (chip_device_platform == "ameba") {
       _platform_target = "Ameba"
+    } else if (chip_device_platform == "atbm") {
+      _platform_target = "Atbm"
     } else if (chip_device_platform == "webos") {
       _platform_target = "webos"
     } else if (chip_device_platform == "bl602") {

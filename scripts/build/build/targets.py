@@ -17,6 +17,7 @@ from itertools import combinations
 from typing import List
 
 from builders.ameba import AmebaApp, AmebaBoard, AmebaBuilder
+from builders.atbm import AtbmApp, AtbmBoard, AtbmBuilder
 from builders.android import AndroidApp, AndroidBoard, AndroidBuilder
 from builders.cc13x2x7_26x2x7 import cc13x2x7_26x2x7App, cc13x2x7_26x2x7Builder
 from builders.cyw30739 import Cyw30739App, Cyw30739Board, Cyw30739Builder
@@ -546,6 +547,13 @@ def AmebaTargets():
     yield ameba_target.Extend('amebad-light', board=AmebaBoard.AMEBAD, app=AmebaApp.LIGHT)
     yield ameba_target.Extend('amebad-pigweed', board=AmebaBoard.AMEBAD, app=AmebaApp.PIGWEED)
 
+def AtbmTargets():
+    atbm_target = Target('atbm', AtbmBuilder)
+
+    yield atbm_target.Extend('atbm-all-clusters', board=AtbmBoard.ATBM, app=AtbmApp.ALL_CLUSTERS)
+    yield atbm_target.Extend('atbm-all-clusters-minimal', board=AtbmBoard.ATBM, app=AtbmApp.ALL_CLUSTERS_MINIMAL)
+    yield atbm_target.Extend('atbm-light', board=AtbmBoard.ATBM, app=AtbmApp.LIGHT)
+    yield atbm_target.Extend('atbm-pigweed', board=AtbmBoard.ATBM, app=AtbmApp.PIGWEED)
 
 def K32WTargets():
     target = Target('k32w', K32WBuilder)
@@ -668,6 +676,7 @@ target_generators = [
     MbedTargets(),
     InfineonTargets(),
     AmebaTargets(),
+    AtbmTargets(),
     K32WTargets(),
     cc13x2x7_26x2x7Targets(),
     Cyw30739Targets(),

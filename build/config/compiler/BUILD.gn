@@ -87,7 +87,8 @@ config("abi_default") {
         cflags += [ "-mfloat-abi=${arm_float_abi}" ]
       }
       if (arm_use_thumb) {
-        cflags += [ "-mthumb" ]
+        # for atbm
+        #cflags += [ "-mthumb" ]
       }
     }
     if (current_cpu == "x86" || current_cpu == "x86_64") {
@@ -537,8 +538,9 @@ config("aliasing_default") {
 config("specs_default") {
   if (current_cpu == "arm" && current_os == "freertos" && !is_clang) {
     cflags = [
-      "--specs=nosys.specs",
-      "--specs=nano.specs",
+        # for atbm
+        #"--specs=nosys.specs",
+        #"--specs=nano.specs",
     ]
 
     libs = [ "nosys" ]
