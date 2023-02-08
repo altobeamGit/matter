@@ -39,4 +39,4 @@ custom_toolchain = "//third_party/connectedhomeip/config/atbm/toolchain:atbm"
 pw_build_PIP_CONSTRAINTS =
     [ "//third_party/connectedhomeip/scripts/constraints.txt" ]
 pw_span_ENABLE_STD_SPAN_POLYFILL = false
-cpp_standard = "c++17"
+#cpp_standard = "c++17"

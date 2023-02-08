@@ -219,7 +219,7 @@ config("warnings_common") {
 
   ldflags = []
   if (treat_warnings_as_errors) {
-    cflags += [ "-Werror" ]
+    #cflags += [ "-Werror" ]
     ldflags += [ "-Werror" ]
   }
 

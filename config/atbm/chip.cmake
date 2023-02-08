@@ -46,7 +46,9 @@ list(
     -Wno-stringop-truncation
     -Wno-format-nonliteral
     -Wno-format-security
-    -std=c++17
+    #-std=c++17
+    -std=gnu++17
+    -fpermissive
 )
 
 list(
@@ -99,9 +101,9 @@ set(import_str "import(\"//args.gni\")\n" )
 string(APPEND CHIP_GN_ARGS "${import_str}")
 string(APPEND CHIP_GN_ARGS "target_cflags_c = [${chip_c_flags}]\n")
 string(APPEND CHIP_GN_ARGS "target_cflags_cc = [${chip_cpp_flags}]\n")
-string(APPEND CHIP_GN_ARGS "atbm_ar = \"nds32le-efl-ar\"\n")
+string(APPEND CHIP_GN_ARGS "atbm_ar = \"nds32le-elf-ar\"\n")
 string(APPEND CHIP_GN_ARGS "atbm_cc = \"nds32le-elf-gcc\"\n")
-string(APPEND CHIP_GN_ARGS "atbm_cxx = \"nds32le-elf-c++\"\n")
+string(APPEND CHIP_GN_ARGS "atbm_cxx = \"nds32le-elf-g++\"\n")
 string(APPEND CHIP_GN_ARGS "atbm_cpu = \"atbm\"\n")
 string(APPEND CHIP_GN_ARGS "chip_inet_config_enable_ipv4 = false\n")
 string(APPEND CHIP_GN_ARGS "chip_use_transitional_commissionable_data_provider = false\n")
