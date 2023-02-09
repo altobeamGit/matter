@@ -88,7 +88,7 @@ static CHIP_ERROR resolveSetupPayloadParameter(SetupPayloadParameter & parameter
     {
         if (isUnsignedInt)
         {
-            parameter.uintValue = stoul(value, nullptr, 10);
+            //parameter.uintValue = stoul(value, nullptr, 10);
         }
         else
         {

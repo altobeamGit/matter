@@ -223,7 +223,7 @@ CHIP_ERROR SetupPayload::getSerialNumber(std::string & outSerialNumber) const
         outSerialNumber = info.data;
         break;
     case (optionalQRCodeInfoTypeUInt32):
-        outSerialNumber = std::to_string(info.uint32);
+        //outSerialNumber = std::to_string(info.uint32);
         break;
     default:
         err = CHIP_ERROR_INVALID_ARGUMENT;
